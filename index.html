@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>अवकाश सरेंडर कार्यालय आदेश</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>अवकाश सरेंडर कार्यालय आदेश</h1>
+        <p>राजस्थान सरकार के कर्मचारियों के लिए आधिकारिक अवकाश सरेंडर आदेश जनरेटर</p>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h2>अवकाश सरेंडर जानकारी</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="officeName">कार्यालय का नाम:</label>
+                    <input id="officeName" value="राजकीय उच्च माध्यमिक विद्यालय गोरधनपुरा जिला बाराँ">
+                </div>
+                <div class="form-group">
+                    <label for="orderNumber">आदेश संख्या:</label>
+                    <input id="orderNumber" value="राऊमावि/2025/1246">
+                </div>
+                <div class="form-group">
+                    <label for="orderDate">आदेश दिनांक:</label>
+                    <input type="date" id="orderDate">
+                </div>
+            </div>
+            <h3>कर्मचारी विवरण</h3>
+            <div class="table-container">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>क्र.सं.</th>
+                            <th>नाम</th>
+                            <th>पद</th>
+                            <th>स्वीकृत दिन</th>
+                            <th>मूल वेतन (₹)</th>
+                            <th>स्वीकृत राशि (₹)</th>
+                            <th>शेष PL</th>
+                            <th>हटाएं</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="addEmployeeRow()">Add Employee</button>
+                <button class="btn btn-success" onclick="generatePreview()">Print Preview</button>
+                <button class="btn btn-danger" onclick="resetForm()">Reset</button>
+            </div>
+        </div>
+        <div class="preview-section" id="previewSection" style="display:none;">
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="downloadPDF()">Download PDF</button>
+                <button class="btn btn-danger" onclick="closePreview()">Close Preview</button>
+            </div>
+            <div id="a4Preview"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
